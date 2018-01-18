@@ -7,4 +7,6 @@ Learning rust-lang
 * [第一个rust程序-HelloWorld](./docs/hello-world.md)
 * [使用Cargo创建项目](./docs/hell-cargo.md)
 
-参考：https://kaisery.github.io/trpl-zh-cn/
+参考：
+* https://kaisery.github.io/trpl-zh-cn/
+* https://doc.rust-lang.org/stable/book/first-edition/
