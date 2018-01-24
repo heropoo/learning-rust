@@ -27,7 +27,7 @@ replace-with = 'ustc'
 [source.ustc]
 registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
 ```
-现在cargo安装外部依赖是不是贼溜~
+现在cargo安装外部依赖是不是贼溜~😉
 
 ## 目录：
 * [安装](./docs/install.md)
