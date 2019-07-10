@@ -1,4 +1,5 @@
 .idea/
 *.exe
+main
 target/
 Cargo.lock
