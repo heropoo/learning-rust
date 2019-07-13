@@ -4,7 +4,9 @@ use std::net::TcpListener;
 use std::fs;
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let host = "127.0.0.1:7878";
+    let listener = TcpListener::bind(host).unwrap();
+    println!("Listening on http://{}", host);
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
