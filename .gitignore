@@ -1,5 +1,6 @@
 .idea/
 *.exe
+*.pdb
 main
 target/
 Cargo.lock
