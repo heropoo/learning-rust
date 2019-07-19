@@ -4,8 +4,7 @@ use std::net::TcpListener;
 use std::fs;
 use std::thread;
 use std::time::Duration;
-use std::thread::Thread;
-use web_server::ThreadPool;
+//use web_server::ThreadPool;
 
 //extern crate httparse;
 
@@ -16,7 +15,7 @@ fn main() {
 
     println!("Listening on http://{}", host);
 
-    let pool = ThreadPool::new(4);
+//    let pool = ThreadPool::new(4);
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
