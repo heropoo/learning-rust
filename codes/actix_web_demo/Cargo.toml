@@ -1,5 +1,5 @@
 [package]
-name = "actix_web"
+name = "actix_web_demo"
 version = "0.1.0"
 authors = ["heropoo <aiyouyou1000@163.com>"]
 edition = "2018"
