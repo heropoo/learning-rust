@@ -10,7 +10,7 @@ fn first_word(s: &String) -> &str {
     &s[..]
 }
 
-fn main(){
+fn main() {
     let s = String::from("Hello World!");
 
     let word = first_word(&s);
