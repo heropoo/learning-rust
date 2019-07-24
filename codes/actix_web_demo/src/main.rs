@@ -1,4 +1,4 @@
-use actix_web::{web, App, HttpResponse, HttpServer, Responder, HttpRequest};
+use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer, Responder};
 
 fn index() -> impl Responder {
     HttpResponse::Ok().body("Hello world!")
@@ -22,8 +22,8 @@ fn main() {
             .route("/again", web::get().to(index2))
             .route("/hello/{name}", web::get().to(greet))
     })
-        .bind("127.0.0.1:8088")
-        .unwrap()
-        .run()
-        .unwrap();
+    .bind("127.0.0.1:8088")
+    .unwrap()
+    .run()
+    .unwrap();
 }
