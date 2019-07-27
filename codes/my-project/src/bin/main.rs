@@ -1,5 +1,7 @@
 use my_project::plant;
 
+extern crate mysql;
+
 fn main() {
     let mut v = plant::Vegetable::new("squash");
 
