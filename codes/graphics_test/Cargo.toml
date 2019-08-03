@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 #glfw="0.30.0"
 kiss3d = "0.20.1"
+nalgebra="*"
