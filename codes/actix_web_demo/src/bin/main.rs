@@ -1,6 +1,5 @@
-use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer, Responder};
-
-// use serde::{Serialize, Deserialize};
+use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer, Responder, Result};
+use serde::{Serialize, Deserialize};
 
 // use serde_json;
 
@@ -17,26 +16,24 @@ fn greet(req: HttpRequest) -> impl Responder {
     format!("Hello {}!", &name)
 }
 
-// #[derive(Serialize, Deserialize)]
-// struct User{
-//     id: u32,
-//     username: String,
-//     password: String,
-//     created_at: u32,
-//     updated_at: u32
-// }
+#[derive(Serialize, Deserialize)]
+struct User{
+    id: u32,
+    username: String,
+    password: String,
+    created_at: u64,
+    updated_at: u64
+}
 
-// fn user() -> impl Responder{
-//     let user = User {
-//         id: 1,
-//         username: String::from("小明"),
-//         password: String::from("123456"),
-//         created_at: 12312,
-//         updated_at: 1232134343
-//     };
-
-//     format!("{}", serde_json::to_string().unwrap())
-// }
+fn user() -> Result<HttpResponse>{
+    Ok(HttpResponse::Ok().json(User {
+        id: 1,
+        username: String::from("小明"),
+        password: String::from("123456"),
+        created_at: 12312,
+        updated_at: 1232134343
+    }))
+}
 
 /// # actix-web
 /// actix-web-demo
@@ -50,7 +47,7 @@ fn main() {
         App::new()
             .route("/", web::get().to(index))
             .route("/again", web::get().to(index2))
-            //.route("/user", web::get().to(user))
+            .route("/user", web::get().to(user))
             .route("/hello/{name}", web::get().to(greet))
     })
     .bind("127.0.0.1:8088")
