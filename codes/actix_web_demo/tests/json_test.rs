@@ -37,15 +37,16 @@ fn json_decode(){
         "id":1,
         "username":"小明",
         "password":"123456",
-        "created_at":12312,
-        "updated_at":1232134343
+        "created_at":1565752020,
+        "updated_at":1565752020,
+        "phones":["13812341234","13812341235"]
     }"#;
 
     // Parse the string of data into serde_json::Value.
     let v: Value = serde_json::from_str(user_string).unwrap();
 
     // Access parts of the data by indexing with square brackets.
-    println!("Please call {} at the number {}", v["username"], v["created_at"]);
+    println!("Please call {} at the number {} on {}", v["username"], v["phones"][1], v["updated_at"]);
     assert_eq!(1, 1)
 }
 
