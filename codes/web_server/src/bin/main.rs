@@ -4,7 +4,7 @@ use std::net::TcpListener;
 use std::fs;
 use std::thread;
 use std::time::Duration;
-// use web_server::ThreadPool;
+use web_server::ThreadPool;
 
 //extern crate httparse;
 
@@ -15,17 +15,17 @@ fn main() {
 
     println!("Listening on http://{}", host);
 
-    //let pool = ThreadPool::new(4);
+    let pool = ThreadPool::new(4);
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        thread::spawn(|| {
-            handle_connection(stream);
-        });
-//        pool.execute(|| {
-//            handle_connection(stream);
-//        });
+        // thread::spawn(|| {
+        //     handle_connection(stream);
+        // });
+       pool.execute(|| {
+           handle_connection(stream);
+       });
     }
 }
 
@@ -37,7 +37,7 @@ fn handle_connection(mut stream: TcpStream) {
     let get = b"GET / HTTP/1.1\r\n";
     let sleep = b"GET /sleep HTTP/1.1\r\n";
 
-    println!("Reqeust: {}", String::from_utf8_lossy(&buffer[..]));
+    println!("Reqeust: {}", String::from_utf8_lossy(&buffer[..]));  //lossy有损的
 
     let (status_line, filename) = if buffer.starts_with(get) {
         ("HTTP/1.1 200 OK\r\n\r\n", "tpls/hello.html")
