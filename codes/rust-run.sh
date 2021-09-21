@@ -9,14 +9,16 @@ cd $pathname
 
 echo "格式化代码"
 rustfmt $file
+echo "rustfmt ${file}";
 
-echo "编译代码"
+echo "\n编译代码"
 rustc $file
+echo "rustc ${file}";
 
 if [ $? -eq 0 ]; then
-    echo "编译成功, 准备运行"
+    echo "\n编译成功, 准备运行"
     echo "------------------------------------"
-    ${filename}
+    ./${filename}
     rm $filename
 else 
     echo "------------------------------------"
