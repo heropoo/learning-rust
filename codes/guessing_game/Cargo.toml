@@ -5,4 +5,4 @@ authors = ["heropoo <aiyouyou1000@163.com>"]
 
 [dependencies]
 
-rand = "0.3.14"
+rand = "0.8.4"
