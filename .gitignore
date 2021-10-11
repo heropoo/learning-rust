@@ -3,5 +3,4 @@
 *.pdb
 main
 target/
-Cargo.lock
 .DS_Store
