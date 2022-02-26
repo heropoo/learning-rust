@@ -11,6 +11,13 @@ fn main() {
     let x = plus_one(x);
 
     println!("The value of x is: {}", x);
+
+    let x = {
+        let y = 6;
+        y
+    };
+    println!("The value of x is: {}", x);
+
 }
 
 //fn another_function(x:i32){
