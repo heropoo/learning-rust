@@ -22,7 +22,7 @@ impl Rectangle {
 }
 
 impl Rectangle {
-    fn perimeter(&self) -> u32 {
+    fn perimeter(self: &Self) -> u32 {
         2 * (self.width + self.height)
     }
 }
