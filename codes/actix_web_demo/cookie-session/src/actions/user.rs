@@ -3,19 +3,15 @@ use serde::{Deserialize, Serialize};
 use actix_session::Session;
 use actix_web::{post, web, HttpRequest, HttpResponse, Result};
 
-#[derive(Deserialize)]
-struct Identity {
-    user_id: i32,
-}
+use crate::models::user::User;
 
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
-pub struct User {
-    pub id: i32,
-    pub username: String,
+#[derive(Deserialize)]
+pub struct Identity {
+    pub user_id: i32,
 }
 
 #[post("/login")]
-async fn login(user_id: web::Json<Identity>, session: Session) -> Result<HttpResponse> {
+pub async fn login(user_id: web::Json<Identity>, session: Session) -> Result<HttpResponse> {
     let id = user_id.into_inner().user_id;
 
     let username = format!("User{}", id);
@@ -32,7 +28,7 @@ async fn login(user_id: web::Json<Identity>, session: Session) -> Result<HttpRes
 }
 
 #[post("/logout")]
-async fn logout(session: Session) -> Result<String> {
+pub async fn logout(session: Session) -> Result<String> {
     let id: Option<i32> = session.get("user_id")?;
     if let Some(x) = id {
         session.purge();
