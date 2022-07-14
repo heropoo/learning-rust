@@ -8,7 +8,7 @@ async fn index(params: web::Path<(u32, String)>) -> impl Responder {
 
 #[get("/")]
 async fn hello() -> impl Responder{
-    HttpResponse::Ok().body("Hello World")
+    HttpResponse::Ok().append_header(("Server", "Hello")).body("Hello World")
 }
 
 #[actix_web::main]
