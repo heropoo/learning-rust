@@ -3,4 +3,5 @@ members = [
     "hello_cargo",
     "hello_rust",
     "web_server",
+    "file"
 ]
