@@ -4,5 +4,6 @@ members = [
     "hello_rust",
     "web_server",
     "file",
-    "rocket_demo"
+    #"rocket_demo",
+    "sleepus-interruptus"
 ]
