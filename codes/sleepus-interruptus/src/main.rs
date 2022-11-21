@@ -23,16 +23,14 @@ fn main() {
     //sleepus();
     //interruptus();
 
-    // # 为每个函数创建一个单独的线程
+    // 1. 为每个函数创建一个单独的线程
     // let sleepus = spawn(sleepus);
     // let interruptus = spawn(interruptus);
     // sleepus.join().unwrap();
     // interruptus.join().unwrap();
 
-    // # 创建一个辅助线程，然后在主线程种调用其中一个函数
+    // 2. 创建一个辅助线程，然后在主线程种调用其中一个函数
     let sleepus = spawn(sleepus);
     interruptus();
     sleepus.join().unwrap();
-
-    // # 用Rust异步async/.await实现交替显示程序 todo
 }
