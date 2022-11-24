@@ -8,4 +8,5 @@ members = [
     "sleepus-interruptus",
     "sleepus-interruptus-asyncstd",
     "aggregator",
+    "largest",
 ]
