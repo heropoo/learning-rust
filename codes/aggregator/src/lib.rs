@@ -32,6 +32,13 @@ impl Summary for Tweet {
 //     println!("Breaking news! {}", item.summarize());
 // }
 
-pub fn notify<T: Summary>(item: &T) {
+// pub fn notify<T: Summary>(item: &T) {
+//     println!("Breaking news! {}", item.summarize());
+// }
+
+pub fn notify<T>(item: &T)
+where
+    T: Summary,
+{
     println!("Breaking news! {}", item.summarize());
 }

@@ -7,4 +7,5 @@ members = [
     #"rocket_demo",
     "sleepus-interruptus",
     "sleepus-interruptus-asyncstd",
+    "aggregator",
 ]
